@@ -148,8 +148,9 @@ def users_register():
 
     user_id = len(UserRepository.USERS)
     password_hash = PasswordService.hash(password)
+    role = "admin" if len(UserRepository.USERS) == 0 else "user"
 
-    user = User(user_id, first_name, last_name, email, password_hash)
+    user = User(user_id, first_name, last_name, email, password_hash,role=role)
     UserRepository.save(user)
 
     session["user_id"] = user.id
@@ -253,7 +254,7 @@ def delete_users_profile(user):
 @app.get("/users")
 @login_re
 @permission_required(UserPermission.USERS_LIST)
-def get_all_users():
+def get_all_users(user):
     users_list = [u.to_dict() for u in UserRepository.get_all_active()]
     return json_response({"users": users_list, "count": len(users_list)}, HTTPStatus.OK)
 
@@ -261,7 +262,7 @@ def get_all_users():
 @app.put("/users/<int:user_id>/role")
 @login_re
 @permission_required(UserPermission.ROLES_MANAGE)
-def change_user_role(user_id):
+def change_user_role(user,user_id):
     target_user = UserRepository.find_by_id(user_id)
     if not target_user or not target_user.is_active:
         return json_response(
