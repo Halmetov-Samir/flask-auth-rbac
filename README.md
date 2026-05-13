@@ -22,15 +22,8 @@ products.write    - создание/изменение (ADMIN)
 
 
 
-## ✅ **Вот документация API с твоими данными:**
 
----
-
-# 📚 Документация API (Flask Auth RBAC)
-
----
-
-## 👤 **Пользователи (Users)**
+##  **Пользователи (Users)**
 
 ### Регистрация пользователя `POST /users/register`
 
@@ -57,7 +50,6 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
 
 ### Вход в систему `POST /users/login`
 
@@ -81,7 +73,6 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
 
 ### Выход из системы `POST /users/logout`
 
@@ -94,7 +85,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Получение своего профиля `GET /users/profile`
 
@@ -109,7 +100,6 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
 
 ### Обновление своего профиля `PUT /users/profile`
 
@@ -133,7 +123,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Удаление своего аккаунта (мягкое удаление) `DELETE /users/profile`
 
@@ -146,7 +136,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Получение всех пользователей (только ADMIN) `GET /users`
 
@@ -173,7 +163,6 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
 
 ### Изменение роли пользователя (только ADMIN) `PUT /users/{user_id}/role`
 
@@ -198,9 +187,9 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
 
-## 📦 **Товары (Products)**
+
+##  **Товары (Products)**
 
 ### Получение всех товаров `GET /products`
 
@@ -227,7 +216,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Получение товара по ID `GET /products/{product_id}`
 
@@ -252,7 +241,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Создание товара (только ADMIN) `POST /products`
 
@@ -279,7 +268,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Обновление товара (только ADMIN) `PUT /products/{product_id}`
 
@@ -305,7 +294,7 @@ products.write    - создание/изменение (ADMIN)
 }
 ```
 
----
+
 
 ### Удаление товара (только ADMIN) `DELETE /products/{product_id}`
 
